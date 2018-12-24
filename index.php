@@ -1,6 +1,15 @@
 <?php
-include 'inc/math.php'
+session_start();
+include 'inc/functions.php';
+
+$total = 10;
+$page = 1;
+
+if ($page > $total) {
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +18,33 @@ include 'inc/math.php'
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!--use <style> tag to add color -->
+    <style>
+        body {
+            background-color: #99cc66;
+        }
+        .btn {
+            border: 2px solid #9966cc;
+            background-color: #9966cc;
+        }
+        .btn:hover {
+            background-color: lightsalmon;
+            color: darkmagenta;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div id="quiz-box">
             <p class="breadcrumbs">Question 1 of 10</p>
             <p class="quiz">What is 54 + 71?</p>
-            <form action="index.php" method="post">
+            <form action="post" method="index.php">
                 <input type="hidden" name="id" value="0" />
                 <input type="submit" class="btn" name="answer" value= 145 />
                 <input type="submit" class="btn" name="answer" value= 125 />
                 <input type="submit" class="btn" name="answer" value= 135 />
 
-                <?php
-                function testAns() {
-                    if('answer' == ['correctAnswer']) {
-                        echo "Good Job! You got it right!";
-                   } else {
-                        echo
-                        "Uh, oh.  Better luck next time.";
-                    if(array_key_exists('answer', $_POST)) {
-                        testAns();
-                        }
-                    }
-                }
-                ?>
 
             </form>
         </div>

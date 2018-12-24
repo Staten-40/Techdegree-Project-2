@@ -1,4 +1,4 @@
-
+<?php
 $questions[] =
     [
         "leftAdder" => 3,
@@ -79,3 +79,18 @@ $questions[] =
     "firstIncorrectAnswer" => 59,
     "secondIncorrectAnswer" => 51
     ];
+
+
+/*function randomQuestion($array) {
+    return $array;
+}
+
+//function printQuestion($array) {
+    $ranQuote = randomQuestion($array);
+}
+
+shuffle($exam);
+foreach($exam as $run) {
+exit($run);
+*/
+?>

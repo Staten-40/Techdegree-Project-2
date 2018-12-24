@@ -1,12 +1,8 @@
 <?php
 session_start();
-$total = 10;
-$page = filter_input(INPUT_POST, 'answer', FILTER_SANITIZE_NUMBER_INT);
-    if(isset($_POST ['choice'])) {
-        $_SESSION['choice'][$page - 1] = filter_input(INPUT_POST, 'choice', FILTER_SANITIZE_STRING);
-    }
-    
-// Generate random questions
+include 'index.php';
+
+// Generate random questions//
 
 $questions[] =
     [
@@ -92,17 +88,9 @@ $questions[] =
 
 // Loop for required number of questions
 
-shuffle($questions);
 
-foreach ($questions as $test) {
-    echo "What is " . $test['leftAdder'] . " + " . $test['rightAdder'] . "  = " . " ?";
-    unset($test);
-
-}
 
 // Get random numbers to add
-
-$answer = ['leftAdder'] + ['rightAdder}'] == ['correctAnswer'];
 
 
 
