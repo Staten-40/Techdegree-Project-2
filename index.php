@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'inc/functions.php';
+include 'inc/questions.php';
 
 $total = 10;
 $page = 1;
@@ -29,8 +29,8 @@ if ($page > $total) {
             background-color: #9966cc;
         }
         .btn:hover {
-            background-color: lightsalmon;
-            color: darkmagenta;
+            background-color: #f6dddd;
+            color: #5f0776;
         }
     </style>
 </head>
@@ -38,7 +38,7 @@ if ($page > $total) {
     <div class="container">
         <div id="quiz-box">
             <p class="breadcrumbs">Question 1 of 10</p>
-            <p class="quiz">What is 54 + 71?</p>
+            <p class="quiz"><?php echo $questions[0]["leftAdder"]; ?> + <?php echo $questions[0]["rightAdder"]; ?> = ?</p>
             <form action="post" method="index.php">
                 <input type="hidden" name="id" value="0" />
                 <input type="submit" class="btn" name="answer" value= 145 />
