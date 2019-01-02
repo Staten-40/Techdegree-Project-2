@@ -1,13 +1,6 @@
 <?php
 session_start();
 include 'inc/questions.php';
-
-$total = 10;
-$page = 1;
-
-if ($page > $total) {
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -22,15 +15,15 @@ if ($page > $total) {
     <!--use <style> tag to add color -->
     <style>
         body {
-            background-color: #99cc66;
+            background-color: #f9f786;
         }
         .btn {
-            border: 2px solid #9966cc;
-            background-color: #9966cc;
+            border: 2px solid #b0f4d8;
+            background-color: #b0f4d8;
         }
         .btn:hover {
-            background-color: #f6dddd;
-            color: #5f0776;
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
