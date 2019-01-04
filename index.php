@@ -15,28 +15,29 @@ include 'inc/questions.php';
     <!--use <style> tag to add color -->
     <style>
         body {
-            background-color: #f9f786;
+            background-color: #63D1F4;
         }
         .btn {
-            border: 2px solid #b0f4d8;
-            background-color: #b0f4d8;
+            border: 2px solid #f9f786;
+            background-color: #f9f786;
         }
         .btn:hover {
             background-color: white;
             color: black;
-        }
-    </style>
+
+      </style>
 </head>
 <body>
     <div class="container">
         <div id="quiz-box">
-            <p class="breadcrumbs">Question 1 of 10</p>
-            <p class="quiz"><?php echo $questions[0]["leftAdder"]; ?> + <?php echo $questions[0]["rightAdder"]; ?> = ?</p>
-            <form action="post" method="index.php">
+            <p class="breadcrumbs"><p>Question 1 of 10</p>
+            <p class="quiz"><p><b><font size="24"> What is  <?php echo $questions[2]["leftAdder"]; ?> + <?php echo $questions[2]["rightAdder"]; ?>  ?  </font size></p>
+            <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value= 145 />
-                <input type="submit" class="btn" name="answer" value= 125 />
-                <input type="submit" class="btn" name="answer" value= 135 />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[2]["correctAnswer"] ?> />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[2]["firstIncorrectAnswer"] ?> />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[2]["secondIncorrectAnswer"] ?>  />
+
 
 
             </form>

@@ -1,5 +1,5 @@
 <?php
-include index.php;
+session_start();
 
 $questions[] =
     [
@@ -82,5 +82,8 @@ $questions[] =
     "secondIncorrectAnswer" => 51
     ];
 
-$myQuestions = $questions;
+
+
+
+
 
