@@ -1,6 +1,15 @@
 <?php
 session_start();
 include 'inc/questions.php';
+
+//Create session counter
+//Reference: https://www.tutorialspoint.com/php/php_sessions.htm
+$counter = 1;
+if(isset ($_SESSION[$counter])) {
+    $_SESSION[$counter] = 1;
+} else {
+    $_SESSION[$counter]++;
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +40,14 @@ include 'inc/questions.php';
     <div class="container">
         <div id="quiz-box">
             <p class="breadcrumbs"><p>Question 1 of 10</p>
-            <p class="quiz"><p><b><font size="24"> What is  <?php echo $questions[2]["leftAdder"]; ?> + <?php echo $questions[2]["rightAdder"]; ?>  ?  </font size></p>
+
+            /* Inline style edits to correct math problem font error.  Tested keys in array */
+            <p class="quiz"><p><b><font size="24"> What is  <?php echo $questions[9]["leftAdder"]; ?> + <?php echo $questions[9]["rightAdder"]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions[2]["correctAnswer"] ?> />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions[2]["firstIncorrectAnswer"] ?> />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions[2]["secondIncorrectAnswer"] ?>  />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[9]["correctAnswer"] ?> />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[9]["firstIncorrectAnswer"] ?> />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[9]["secondIncorrectAnswer"] ?>  />
 
 
 
