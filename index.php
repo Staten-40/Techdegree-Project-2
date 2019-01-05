@@ -4,11 +4,11 @@ include 'inc/questions.php';
 
 //Create session counter
 //Reference: https://www.tutorialspoint.com/php/php_sessions.htm
-$counter = 1;
-if(isset ($_SESSION[$counter])) {
-    $_SESSION[$counter] = 1;
+
+if(isset ($_SESSION["counter"])) {
+    $_SESSION["counter"]++;
 } else {
-    $_SESSION[$counter]++;
+    $_SESSION["counter"] = 1;
 }
 ?>
 
@@ -40,8 +40,6 @@ if(isset ($_SESSION[$counter])) {
     <div class="container">
         <div id="quiz-box">
             <p class="breadcrumbs"><p>Question 1 of 10</p>
-
-            /* Inline style edits to correct math problem font error.  Tested keys in array */
             <p class="quiz"><p><b><font size="24"> What is  <?php echo $questions[9]["leftAdder"]; ?> + <?php echo $questions[9]["rightAdder"]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
