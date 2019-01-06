@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 session_start();
 include 'inc/questions.php';
 
@@ -7,9 +8,16 @@ include 'inc/questions.php';
 
 if(isset ($_SESSION["counter"])) {
     $_SESSION["counter"]++;
+} elseif(!isset($_SESSION["counter"]) || ($_SESSION["counter"]) >= 10) {
+      reset($_SESSION["counter"]);
 } else {
     $_SESSION["counter"] = 1;
+
 }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +47,7 @@ if(isset ($_SESSION["counter"])) {
 <body>
     <div class="container">
         <div id="quiz-box">
-            <p class="breadcrumbs"><p>Question 1 of 10</p>
+            <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
             <p class="quiz"><p><b><font size="24"> What is  <?php echo $questions[9]["leftAdder"]; ?> + <?php echo $questions[9]["rightAdder"]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
