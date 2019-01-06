@@ -6,12 +6,32 @@ include 'inc/questions.php';
 //Create session counter
 //Reference: https://www.tutorialspoint.com/php/php_sessions.htm
 
-if(isset ($_SESSION["counter"])) {
+/*if(isset ($_SESSION["counter"])){
     $_SESSION["counter"]++;
-} elseif(!isset($_SESSION["counter"]) || ($_SESSION["counter"]) >= 10) {
-      reset($_SESSION["counter"]);
-} else {
+}  else {
     $_SESSION["counter"] = 1;
+   }
+*/
+if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
+    $_SESSION["counter"] = 1;
+} else {
+    $_SESSION["counter"]++;
+    session_destroy($_SESSION["counter"]);
+
+    shuffle($questions);
+ /*   $getQuest = $questions;
+        $getRand = $getQuest[rand (0, count($getQuest) -1)];
+	echo $getRand;
+ */
+ if($_SERVER["REQUEST_METHOD"] == "POST") {
+     $userAns = 0;
+  if($userAns == ["correctAnswer"]) {
+      echo "Nice Job!  You're right!";
+  } else {
+      echo "Wrong answer.  Better luck on the next question.";
+  }
+ }
+
 
 }
 
