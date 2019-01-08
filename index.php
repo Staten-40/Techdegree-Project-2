@@ -12,6 +12,8 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
 }
+ $SESSION[$questions] = $questions;
+var_dump($_SESSION[$questions]);
 
  ?>
 
@@ -36,6 +38,7 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
         .btn:hover {
             background-color: white;
             color: black;
+        }
 
       </style>
 </head>
@@ -43,7 +46,7 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     <div class="container">
         <div id="quiz-box">
             <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
-            <p class="quiz"><p><b><font size="24"> What is <?php echo $questions[$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $questions[$_SESSION["counter"] -1]["rightAdder"];; ?>  ?  </font size></p>
+            <p class="quiz"><p><b><font size="24"> What is <?php echo $questions[$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $questions[$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
                 <input type="submit" class="btn" name="answer" value= <?php echo $questions[0]["correctAnswer"] ?> />

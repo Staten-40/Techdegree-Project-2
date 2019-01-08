@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-v$questions[] =
+$questions[] =
     [
         "leftAdder" => 3,
         "rightAdder" => 4,
