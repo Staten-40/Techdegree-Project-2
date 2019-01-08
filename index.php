@@ -3,42 +3,17 @@ error_reporting(E_ALL);
 session_start();
 include 'inc/questions.php';
 
+
 //Create session counter
 //Reference: https://www.tutorialspoint.com/php/php_sessions.htm
-
-/*if(isset ($_SESSION["counter"])){
-    $_SESSION["counter"]++;
-}  else {
-    $_SESSION["counter"] = 1;
-   }
-*/
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"] = 1;
 } else {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
-
-    shuffle($questions);
- /*   $getQuest = $questions;
-        $getRand = $getQuest[rand (0, count($getQuest) -1)];
-	echo $getRand;
- */
- if($_SERVER["REQUEST_METHOD"] == "POST") {
-     $userAns = 0;
-  if($userAns == ["correctAnswer"]) {
-      echo "Nice Job!  You're right!";
-  } else {
-      echo "Wrong answer.  Better luck on the next question.";
-  }
- }
-
-
 }
 
-
-
-
-?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,12 +43,12 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     <div class="container">
         <div id="quiz-box">
             <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
-            <p class="quiz"><p><b><font size="24"> What is  <?php echo $questions[9]["leftAdder"]; ?> + <?php echo $questions[9]["rightAdder"]; ?>  ?  </font size></p>
+            <p class="quiz"><p><b><font size="24"> What is <?php echo $questions[$_SESSION["counter"] -1]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions[9]["correctAnswer"] ?> />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions[9]["firstIncorrectAnswer"] ?> />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions[9]["secondIncorrectAnswer"] ?>  />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[0]["correctAnswer"] ?> />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[0]["firstIncorrectAnswer"] ?> />
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions[0]["secondIncorrectAnswer"] ?>  />
 
 
 
