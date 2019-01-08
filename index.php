@@ -12,8 +12,8 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
 }
- $SESSION[$questions] = $questions;
-var_dump($_SESSION[$questions]);
+ $SESSION["tina"] = $questions;
+var_dump($_SESSION["tina"]);
 
  ?>
 
