@@ -7,13 +7,14 @@ include 'inc/questions.php';
 //Create session counter
 //Reference: https://www.tutorialspoint.com/php/php_sessions.htm
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
+    $_SESSION["tina"] = $questions;
     $_SESSION["counter"] = 1;
 } else {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
 }
- $SESSION["tina"] = $questions;
-var_dump($_SESSION["tina"]);
+ //$_SESSION["tina"] = $questions;
+//var_dump($_SESSION["tina"]);
 
  ?>
 
