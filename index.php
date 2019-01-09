@@ -16,9 +16,9 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
 
 $response[] =
  [
-       $userReply["correctAnswer"],
-       $userReply["firstIncorrectAnswer"],
-       $userReply["secondIncorrectAnswer"],
+       $questions["correctAnswer"],
+       $questions["firstIncorrectAnswer"],
+       $questions["secondIncorrectAnswer"],
  ];
 
 shuffle($response);
@@ -60,9 +60,9 @@ shuffle($response);
             <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value= <?php echo $response[$userReply["correctAnswer"]]; ?> >
-                <input type="submit" class="btn" name="answer" value= <?php echo $response[$userReply["firstIncorrectAnswer"]] ?> >
-                <input type="submit" class="btn" name="answer" value= <?php echo $response[$userReply["secondIncorrectAnswer"]]?> >
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions["correctAnswer"]; ?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions["firstIncorrectAnswer"]; ?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo $questions["secondIncorrectAnswer"]?> / >
 
 
             </form>
