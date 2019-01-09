@@ -13,6 +13,7 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
 } else {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
+}
 
 $testQuest = $_SESSION["tina"][$_SESSION["counter"] -1];
 $response =
@@ -22,6 +23,7 @@ $response =
         $testQuest["secondIncorrectAnswer"],
     ];
 shuffle($response);
+echo($response[0]);
 
 
 //$_SESSION["tina"] = $questions;
