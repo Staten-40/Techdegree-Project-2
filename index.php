@@ -14,7 +14,7 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
 
-$response[] =
+//$response[] =
  [
        $questions["correctAnswer"],
        $questions["firstIncorrectAnswer"],
@@ -25,7 +25,10 @@ shuffle($response);
 }
 //$_SESSION["tina"] = $questions;
 //var_dump($_SESSION["tina"]);
-
+$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
+var_dump($individual_question);
+echo "<br /><br /><br />";
+var_dump($questions);
  ?>
 
 <!DOCTYPE html>
