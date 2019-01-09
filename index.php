@@ -14,20 +14,21 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
 
-shuffle($response);
-}
-
+$testQuest = $_SESSION["tina"][$_SESSION["counter"] -1];
 $response =
     [
-        $userAns["correctAnswer"],
-        $userAns["firstIncorrectAnswer"],
-        $userAns["secondIncorrectAnswer"],
-    ]
+        $testQuest["correctAnswer"],
+        $testQuest["firstIncorrectAnswer"],
+        $testQuest["secondIncorrectAnswer"],
+    ];
+shuffle($response);
+
+
 //$_SESSION["tina"] = $questions;
 //var_dump($_SESSION["tina"]);
 //$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
 //var_dump($individual_question);
-/cho "<br /><br /><br />";
+//ceho "<br /><br /><br />";
 //var_dump($questions);
  ?>
 
@@ -63,9 +64,9 @@ $response =
             <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions["correctAnswer"]; ?> / >
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions["firstIncorrectAnswer"]; ?> / >
-                <input type="submit" class="btn" name="answer" value= <?php echo $questions["secondIncorrectAnswer"]?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo $testQuest["correctAnswer"]; ?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo $testQuest["firstIncorrectAnswer"]; ?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo $testQuest["secondIncorrectAnswer"]?> / >
 
 
             </form>
