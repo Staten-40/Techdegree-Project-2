@@ -61,7 +61,13 @@ shuffle($response);
 <body>
     <div class="container">
         <div id="quiz-box">
-            <Iecho($response[2]);?> / >
+            <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
+            <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
+            <form action="index.php" method="post">
+                <input type="hidden" name="id" value="0" />
+                <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / >
 
 
             </form>
