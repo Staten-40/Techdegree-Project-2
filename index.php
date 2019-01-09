@@ -14,21 +14,21 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"]++;
     session_destroy($_SESSION["counter"]);
 
-//$response[] =
- [
-       $questions["correctAnswer"],
-       $questions["firstIncorrectAnswer"],
-       $questions["secondIncorrectAnswer"],
- ];
-
 shuffle($response);
 }
+
+$response =
+    [
+        $userAns["correctAnswer"],
+        $userAns["firstIncorrectAnswer"],
+        $userAns["secondIncorrectAnswer"],
+    ]
 //$_SESSION["tina"] = $questions;
 //var_dump($_SESSION["tina"]);
-$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
-var_dump($individual_question);
-echo "<br /><br /><br />";
-var_dump($questions);
+//$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
+//var_dump($individual_question);
+/cho "<br /><br /><br />";
+//var_dump($questions);
  ?>
 
 <!DOCTYPE html>
