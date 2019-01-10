@@ -3,9 +3,6 @@ error_reporting(E_ALL);
 session_start();
 include 'inc/questions.php';
 
-
-//Create session counter
-//Reference: https://www.tutorialspoint.com/php/php_sessions.htm
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     shuffle($questions);
     $_SESSION["tina"] = $questions;
@@ -23,6 +20,8 @@ $response =
         $testQuest["secondIncorrectAnswer"],
     ];
 shuffle($response);
+
+
 
 
 //$_SESSION["tina"] = $questions;
@@ -67,8 +66,23 @@ shuffle($response);
                 <input type="hidden" name="id" value="0" />
                 <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
                 <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
-                <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / >
+                <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / ><br><br><br>
 
+                <?php
+                if(isset($_SESSION["correctAnswer"]) && isset($_POST[$_SESSION["correctAnswer"]])) {
+                    $_SESSION["total"] +=1;
+                    echo "Woo hoo!  You're right!";
+                        } else {
+                    echo "Uh oh.  Better luck next question.";
+                    }
+                
+                if(!isset($_SESSION["total"])) {
+                    $_SESSION["total"] = 0;
+                    $_SESSION["counter"] = 0;
+                }
+                    echo "You got = " . $_SESSION["total"] . " correct!";
+
+                 ?>
 
             </form>
         </div>
