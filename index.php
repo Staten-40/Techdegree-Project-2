@@ -29,7 +29,7 @@ shuffle($response);
 //var_dump($_SESSION["tina"]);
 //$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
 //var_dump($individual_question);
-//ceho "<br /><br /><br />";
+//echo "<br /><br /><br />";
 //var_dump($questions);
  ?>
 
