@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 session_start();
+
 include 'inc/questions.php';
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     shuffle($questions);
@@ -55,13 +56,22 @@ shuffle($response);
     <div id="quiz-box">
         <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
         <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
-        
+
         <form action="index.php" method="post">
             <input type="hidden" name="id" value="0" />
             <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
             <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
             <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / ><br><br><br>
 
+            <?php
+            if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
+                echo "<br /><p>Uh oh. Wrong answer.  Better luck next question.</p>";
+            } else {
+                echo "<br /><p>Woo hoo!  You got it right!</p>";
+            }
+
+
+              ?>
 
 
         </form>
@@ -69,3 +79,16 @@ shuffle($response);
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
