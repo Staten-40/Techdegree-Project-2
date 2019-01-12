@@ -19,12 +19,19 @@ $response =
         $testQuest["secondIncorrectAnswer"],
     ];
 shuffle($response);
-//$_SESSION["tina"] = $questions;
+
 //var_dump($_SESSION["tina"]);
 //$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
 //var_dump($individual_question);
 //echo "<br /><br /><br />";
 //var_dump($questions);
+
+if(!isset($_SESSION["results"])) {
+    $_SESSION["results"] = 0;
+} else {
+    $_SESSION["results"]++;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -52,39 +59,43 @@ shuffle($response);
     </style>
 </head>
 <body>
-<br>
+
+<div class="toast">
 
 <?php
-if($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
-    $_SESSION["counter"]++;
-    echo "<strong>Woo hoo!   You got it right!</strong>";
+/*if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
+    echo "<stong><color = darkpurple>Let's begin!</color></strong>";
+} elseif($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+    echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
+} elseif($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["incorrectAnswer"]) {
+    echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
 } else {
-    echo "<strong>Uh oh.   Wrong answer.   Better luck with the next question.</strong>";
-
+    $_SESSION["counter"] = 10;
+    echo "No more questions! <br /> You answered .  $_SESSION["counter"]-2]["correctAnswer"]; . out of 10 questions correctly!";
 }
+*/
 ?>
+
 
 <div class="container">
     <div id="quiz-box">
         <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
         <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
 
-
-
-
         <form action="index.php" method="post">
             <input type="hidden" name="id" value="0" />
             <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
             <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
-            <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / ><br><br><br>
+            <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> />
 
 
 
 
         </form>
-    </div>
-</div>
-</body>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
 
 
