@@ -52,10 +52,25 @@ shuffle($response);
     </style>
 </head>
 <body>
+<br>
+
+<?php
+if($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+    $_SESSION["counter"]++;
+    echo "<strong>Woo hoo!   You got it right!</strong>";
+} else {
+    echo "<strong>Uh oh.   Wrong answer.   Better luck with the next question.</strong>";
+
+}
+?>
+
 <div class="container">
     <div id="quiz-box">
         <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
         <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["tina"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
+
+
+
 
         <form action="index.php" method="post">
             <input type="hidden" name="id" value="0" />
@@ -63,16 +78,7 @@ shuffle($response);
             <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
             <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / ><br><br><br>
 
-            <?php
-            if($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
-                $_SESSION["counter"]++;
-                echo "Woo hoo!   You got it right!";
-            } else {
-                echo "Uh oh.   Wrong answer.   Better luck with the next question.";
 
-            }
-            ?>
-           
 
 
         </form>
