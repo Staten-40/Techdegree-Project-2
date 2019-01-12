@@ -64,14 +64,15 @@ shuffle($response);
             <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> / ><br><br><br>
 
             <?php
-                if($_POST["answer" == $_SESSION["tina][_SESSION["counter"]-2]["correctAnswer]){
-                    //increase score by 1
-                    echo "Woo hoo!  You got it right!";
-                 } else {
-                    echo "Uh oh.  Wrong answer.  Better luck with the nexr question.";
+            if($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+                $_SESSION["counter"]++;
+                echo "Woo hoo!   You got it right!";
+            } else {
+                echo "Uh oh.   Wrong answer.   Better luck with the next question.";
 
             }
-                        ?>
+            ?>
+           
 
 
         </form>
