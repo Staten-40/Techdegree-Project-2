@@ -5,8 +5,30 @@ body {
     background-color: #99cc66
 }
 
+.header {
+    margin-left: 38%;
+    margin-top: 5%;
+    font-weight: bold;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    line-height: .10;
+
+}
+
+.header2 {
+    margin-left: -2%;
+    margin-top: 3%;
+    font-weight: bold;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    line-height: .10;
+
+}
+
 .toast {
-    margin-left: 10%;
+    margin-left: -41%;
     margin-top: 8%;
     font-weight: bold;
     left: 10%;
@@ -15,9 +37,22 @@ body {
     line-height: .5;
 
 }
+
+.toast2 {
+    margin-left: -41%;
+    margin-top: 8%;
+    font-weight: bold;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    line-height: .5;
+
+
+
+}
 #quiz-box {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 10%;
     right: 10%;
     width: 80%;
@@ -59,7 +94,7 @@ body {
     color: black;
     background-color: #9966cc;
     padding: 15px;
-    margin: 10px;
+    margin: 4px;
     transition: .5s ;
     text-decoration: none;
 

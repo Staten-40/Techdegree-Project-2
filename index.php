@@ -60,20 +60,22 @@ if(!isset($_SESSION["results"])) {
 </head>
 <body>
 
-<div class="toast">
+<div class = "header">
+<h1>MATH QUIZ</h1>
 
+ <div class = "header2">
+ <h3>Mrs. Shoobobbisock's Class</h3>
+
+<div class="toast">
 <?php
-/*if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
-    echo "<stong><color = darkpurple>Let's begin!</color></strong>";
+if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
+    echo "<strong>Let's begin!</strong>";
 } elseif($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
-    echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
-} elseif($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["incorrectAnswer"]) {
+    echo "<strong>Woo hoo!   You got it right!    Here's the next one:</></strong>";
+} else  {
     echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
-} else {
-    $_SESSION["counter"] = 10;
-    echo "No more questions! <br /> You answered .  $_SESSION["counter"]-2]["correctAnswer"]; . out of 10 questions correctly!";
 }
-*/
+
 ?>
 
 
@@ -92,6 +94,9 @@ if(!isset($_SESSION["results"])) {
 
 
         </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
