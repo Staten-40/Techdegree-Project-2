@@ -3,14 +3,13 @@ error_reporting(E_ALL);
 session_start();
 
 include 'inc/questions.php';
-if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
+if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
     shuffle($questions);
     $_SESSION["tina"] = $questions;
     $_SESSION["counter"] = 1;
     $_SESSION["results"] = 0;
-} elseif (!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
+   } else {
     $_SESSION["counter"]++;
-    $_SESSION["results"]++;
 }
 
  /*   if(!isset($_SESSION["results"])) {
@@ -36,11 +35,6 @@ shuffle($response);
 //echo "<br /><br /><br />";
 //var_dump($questions);
 
-if(!isset($_SESSION["results"])) {
-    $_SESSION["results"] = 0;
-} else {
-    $_SESSION["results"]++;
-}
 
 ?>
 
@@ -81,17 +75,12 @@ if(!isset($_SESSION["results"])) {
 if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
     echo "<strong>Let's begin!</strong>";
 } elseif($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
-    echo "<strong>Woo hoo!   You got it right!    Here's the next one:</></strong>";
+    echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
 } else  {
     echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
 }
 
-if($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]) {
-
-}
-
 ?>
-
 
 <div class="container">
     <div id="quiz-box">
