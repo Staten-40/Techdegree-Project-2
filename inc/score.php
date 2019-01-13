@@ -13,7 +13,7 @@ session_start();
 <style>
     body {
         font-family: 'Playfair Display', serif;
-        background-color: #99cc66
+        background-color: #63D1F4;
     }
     .header {
         margin-left: 38%;
@@ -35,6 +35,22 @@ session_start();
         line-height: .10;
     }
 
+    input.btn2 {
+        width: 12em;
+        display: inline-block;
+        bottom: 150px;
+        border-radius: 4px;
+        border: 2px solid 	#00FF00;
+        color: black;
+        background-color: 	#00FF00;
+        padding: 15px;
+        margin: 4px;
+        transition: .5s ;
+        text-decoration: none;
+
+
+    }
+
 </style>
    <body>
 
@@ -48,7 +64,27 @@ session_start();
 
 
 <?php
-if($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+
+$answer = trim(FILTER_SANTAIZE_STRING["answer"], FILTER_SANITIZE_STRING);
+if($answer == [$_SESSION["whitney"]]) {
+    $_SESSION["message"] = "Woo hoo!  You got it right!  Here's the next one:"
+    $_SESSION["results"]++;
+} elseif($_SESSION["message"] = "Bummer.  Wrong answer.  Better luck with the next question:";
+} elseif($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+    echo "You got the last question right!";
+} else {
+    echo "The last question was incorrect"<br />;    }
+    echo "NO MORE QUESTIONS!"<br />;
+    echo " You answered $_SESSION{\"results\"] out of 10 questions correctly! Your Grade: $_SESSION["results*10"];"
+    "<p>Would you like to give it another go?</p>";
+
+}
+
+
+
+
+
+/*if($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
     echo "You got the last question right";
 
 } else {
@@ -57,11 +93,12 @@ if($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["count
 
 echo "No more questions! You answered $_SESSION{"results"] out of 10 questions correctly! Your Grade: $_SESSION["results"]* 10;
 
-ech d you like to give it another try?</p>";
+echo "Would you like to give it another try?</p>";
 
-
+*/
 
 ?>
+     <input class="btn2" type="button" value="Try Again" onclick="../index.php">
 
 
         </div>
