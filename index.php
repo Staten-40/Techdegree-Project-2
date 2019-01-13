@@ -13,13 +13,10 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
 }
 
 if($_SESSION["counter"] == 10) {
-    header("Location: score.php");
+    header("Location: inc/score.php");
 
 }
-
-
-
-    session_destroy($_SESSION["counter"]);
+    session_destroy();
 
 $testQuest = $_SESSION["tina"][$_SESSION["counter"] -1];
 $response =
@@ -48,7 +45,6 @@ shuffle($response);
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!--use <style> tag to add color -->
     <style>
         body {
             background-color: #63D1F4;
@@ -65,12 +61,17 @@ shuffle($response);
 </head>
 <body>
 
+<div class = "header">
+    <h1>MATH QUIZ</h1>
+
+    <div class = "header2">
+        <h3>Mrs. Shoobobbisock's Class</h3>
+
 <div class="toast">
 <?php
 if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
     echo "<strong>Let's begin!</strong>";
 } elseif($_POST["answer"] == $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
-
     echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
     $_SESSION["results"]++;
 } else  {
