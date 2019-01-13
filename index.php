@@ -12,8 +12,8 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
     $_SESSION["counter"]++;
 }
 
-if($_SESSION["counter"] = 10) {
-    header("Locztion: score.php");
+if($_SESSION["counter"] == 10) {
+    header("Location: score.php");
 
 }
 
