@@ -7,13 +7,10 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     shuffle($questions);
     $_SESSION["tina"] = $questions;
     $_SESSION["counter"] = 1;
+    $_SESSION["results"] = 0;
 } elseif (!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10)) {
     $_SESSION["counter"]++;
-} elseif(!isset($_SESSION["results"])) {
-    $_SESSION["results"] = 0;
-} else {
     $_SESSION["results"]++;
-    $_SESSION["results"] = 0;
 }
 
  /*   if(!isset($_SESSION["results"])) {
@@ -89,7 +86,7 @@ if(!isset($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"])) {
     echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
 }
 
-if($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]) = 10 {
+if($_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]) {
 
 }
 
