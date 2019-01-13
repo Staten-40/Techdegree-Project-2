@@ -3,6 +3,8 @@ error_reporting(E_ALL);
 session_start();
 
 include 'inc/questions.php';
+
+
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
     shuffle($questions);
     $_SESSION["tina"] = $questions;
@@ -56,6 +58,16 @@ shuffle($response);
         .btn:hover {
             background-color: white;
             color: black;
+        }
+
+        .toast {
+            margin-left: -47%;
+            margin-top: 8%;
+            font-weight: bold;
+            left: 10%;
+            right: 10%;
+            width: 80%;
+            line-height: .5;
         }
     </style>
 </head>

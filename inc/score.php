@@ -3,14 +3,13 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Math Quiz: Addition</title>
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
 <style>
     body {
         font-family: 'Playfair Display', serif;
@@ -29,10 +28,12 @@ session_start();
 
     .header2 {
         margin-left: -2%;
-        margin-top: 1%;eight: bold;
+        margin-top: 1%;
+        eight: bold;
         left: 10%;
         right: 10%;
         line-height: .10;
+    }
 
 </style>
    <body>
@@ -53,12 +54,16 @@ if($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["count
 } else {
     echo "The last question was incorrect";
 }
-<br><br><br><br><br>
-echo "No more questions! You answered  .  $response  . out of 10 questions correctly! Your Grade:  ";
 
-        font-w
+echo "No more questions! You answered $_SESSION{"results"] out of 10 questions correctly! Your Grade: $_SESSION["results"]* 10;
+
+ech d you like to give it another try?</p>";
+
+
 
 ?>
+
+
         </div>
     </body>
 </html>
