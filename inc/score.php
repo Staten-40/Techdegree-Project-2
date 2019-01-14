@@ -88,40 +88,27 @@ if($answer == [$_SESSION["whitney"]]) {
     echo " You answered $_SESSION{\"results\"] out of 10 questions correctly! Your Grade: $_SESSION["\results\"] * 10";"
 }
 
-"<p>Would you like to give it another go?</p>";
-
-*/
-
-
-
+"<p>Would you like to give it another go?</p>";*/
 
 $total = 10;
-if($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+if($_SESSION["message"] == $_POST["answer"] = $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]){
     $_SESSION["results"]++;
-    echo "You got the last question right";
-    echo "<br>";
+    echo "You got the last question right! No more questions!";
     echo "<br>";
 
 } else {
-    echo "The last question was incorrect";
-    echo "<br>";
+    echo "Your last question was incorrect.  No more questions!";
     echo "<br>";
 }
 
-echo "No more questions!";
-echo "<br>";
-e
-
-echo "You got " . $_SESSION["results"] . "correct out of 10 questions!";
-echo "<br>";
-
-
-echo "Your score is " . $_SESSION["results"]*10 . "%!"
-
 ?>
-         "<p>Would you like to give it another go?</p>"
 
-         <a href="../index.php"><button>Try Again</button></a>
+
+         <p>You answered <?php echo $_SESSION["results"]; ?> out of 10 questions correctly!</p>
+         <p>Your score is  <?php echo $_SESSION["results"]*10; ?>%!</p><br>
+         <p>Would you like to give it another go?</p><br>
+
+         <a href="../index.php" name="submit"<button>Try Again"</button>
 
 
               </div>
