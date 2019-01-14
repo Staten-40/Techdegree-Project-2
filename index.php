@@ -46,6 +46,15 @@ shuffle($response);
             background-color: white;
             color: black;
         }
+        .toast {
+            margin-left: -40%;
+            margin-top: 7%;
+            font-weight: bold;
+            left: 10%;
+            right: 10%;
+            width: 80%;
+            line-height: .5;
+        }
 
     </style>
 </head>
@@ -56,12 +65,14 @@ shuffle($response);
 
     <div class = "header2">
         <h3>Mrs. Shoobobbisock's Class</h3>
+    </div>
 
+    <div class="toast">
         <?php
 
-       if($_SESSION["counter"] == 1) {
+        if($_SESSION["counter"] == 1) {
            echo "<strong>Let's begin!</strong>";
-          } elseif($_POST["answer"] == [$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]]) {
+          } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]) {
             echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
             $_SESSION["results"]++;
             } else {
@@ -78,17 +89,15 @@ shuffle($response);
                         <input type="hidden" name="id" value="0" />
                         <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
                         <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
-                        <input type="submit" class="btn" name="answer" value= <?php echo($response[2]); ?> />
+                        <input type="submit" class="btn" name="answer" value= <?php echo($response[2]); ?> / >
 
 
 
 
-                    </form>
+                     </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
 </body>
 </html>
