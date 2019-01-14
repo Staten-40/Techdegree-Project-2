@@ -13,20 +13,16 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
 if($_SESSION["counter"] == 10) {
     header("Location: inc/score.php");
 }
-session_destroy();
+//session_destroy();
 $testQuest = $_SESSION["whitney"][$_SESSION["counter"] -1];
-$response =%
+$response =
     [
         $testQuest["correctAnswer"],
         $testQuest["firstIncorrectAnswer"],
         $testQuest["secondIncorrectAnswer"],
     ];
 shuffle($response);
-//var_dump($_SESSION["tina"]);
-//$individual_question = $_SESSION["tina"][$_SESSION["counter"] -1];
-//var_dump($individual_question);
-//echo "<br /><br /><br />";
-//var_dump($questions);
+
 ?>
 
 <!DOCTYPE html>
@@ -50,15 +46,7 @@ shuffle($response);
             background-color: white;
             color: black;
         }
-        .toast {
-            margin-left: -47%;
-            margin-top: 8%;
-            font-weight: bold;
-            left: 10%;
-            right: 10%;
-            width: 80%;
-            line-height: .5;
-        }
+
     </style>
 </head>
 <body>
@@ -69,21 +57,17 @@ shuffle($response);
     <div class = "header2">
         <h3>Mrs. Shoobobbisock's Class</h3>
 
-        <div class="toast">
-            <?php
-
-
-            if(!isset($_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"])) {
-                echo "<strong>Let's begin!</strong>";
-            } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]){
-                echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
-                $_SESSION["results"]++;
-            } else {
-                echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
-
-            }
-
-            ?>
+        <?php
+        /*
+       if(!isset($_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"])) {
+            echo "<strong>Let's begin!</strong>";
+        } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]){
+            echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
+            $_SESSION["results"]++;
+        } else {
+        echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
+        */
+        ?>
 
             <div class="container">
                 <div id="quiz-box">
@@ -94,7 +78,7 @@ shuffle($response);
                         <input type="hidden" name="id" value="0" />
                         <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
                         <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
-                        <input type="submit" class="btn" name="answer" value= <?php echo($response[2]);?> />
+                        <input type="submit" class="btn" name="answer" value= <?php echo($response[2]); ?> />
 
 
 

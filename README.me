@@ -10,12 +10,12 @@ SUMMARY OF ASSIGNMENT
 
 - The $questions multidimensional array in the questions.php file is where the math equations are being generated for this app.
 
-EXPLANATION OF CODE
+EXPLANATION OF CODE - INDEX.PHP
 ------------------------------------------------------------------------
 **--Lines 1 - 15--** 
 - The fun begins by constructing a $_SESSION["counter] to keep track of what question the student is on.  
 - An If/Else block was created that tells the app if the counter is not set or if the counter is less than 10,to shuffle the $questions array, thereby randomizing said array.   
-- $_SESSION["tina"] variable (homage to Tina Turner, shout out to Jennifer Nordell) was then created to individualize each item in the $questions multidimensional array so no question in the array would repeat when the student takes the quiz.  
+- $_SESSION["whitney"] variable (because just like Whitney is every woman, $_SESSION{"whitney"] is every variable, shout out to Jennifer Nordell) was then created to individualize each item in the $questions multidimensional array so no question in the array would repeat when the student takes the quiz.
 - The counter starts at 1 (Question 1 of 10), incrementing by 1 until it reaches Question 10 of 10, then the $_SESSION(s) are "destroyed".
 - Reference: https://www.tutorialspoint.com/php/php_sessions.html
 
@@ -24,19 +24,18 @@ EXPLANATION OF CODE
 - -1 is required for this particular $_SESSION["counter"] because this is an array of 10 questions, but the first question in the $questions multidimensional array has a key of zero.
 - The student choices for answers are then "shuffled".
 
-**--Lines 46 - 59--**
-- The <style></style> tag was used to add color to the page.  Because...color!
+**--Lines 37 - 58--**
+- The <style></style> tag was used to add color to the background and buttons...Because...color!
 
 **--Line 64--**
-The $_SESSION["counter"] created in Lines 1 - 15 were echoed out in  php block nd printed to screen, thereby providing a visualmeasure to the student on the screen of where they are in the quiz.
+The $_SESSION["counter"] created in Lines 1 - 15 were echoed out in  php block and printed to screen, thereby providing a visual measure to the student on-screen of where they are in the quiz.
 
-**--Line 65--**
--  A formatting mishap occurred tht needed a band-aid.
-- The individual randomized questions ($_SESSION["tina"]) is echoed out with the counter associated with the $_SESSION["tina"] variable and printed to screen in a php block.
+**--Lines 66 - 72--**
+- A header was created for the sake of formality(who's class) and navigation redirect.
 
-**--Lines 67 - 70--**
-- The $random variable is used to echo out the student choice for answers thereby shuffling the buttons and the answers held within.
-
+**--Line 78--**
+-  A formatting mishap occurred that needed a band-aid.
+- The individual randomized questions ($_SESSION["whitney"]) is echoed out with the counter associated with the $_SESSION["whitney"] variable and printed to screen in a php block.
 
 
 
