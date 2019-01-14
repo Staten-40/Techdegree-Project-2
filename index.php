@@ -59,14 +59,14 @@ shuffle($response);
 
         <?php
 
-      /* if(!isset($_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"])) {
+       if($_SESSION["counter"] == 1) {
            echo "<strong>Let's begin!</strong>";
-          } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]["correctAnswer"]){
+          } elseif($_POST["answer"] == [$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]]) {
             echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
             $_SESSION["results"]++;
             } else {
-            echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
-        */
+           echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
+       }
         ?>
 
             <div class="container">

@@ -59,24 +59,32 @@ session_start();
      <div class="toast">
 <?php
 
-/*$answer = trim(FILTER_SANTAIZE_STRING["answer"], FILTER_SANITIZE_STRING);
-if($answer == [$_SESSION["whitney"]]) {
+
+//$answer = $_SESSION["whitney"];
+/*if($answer == [$_SESSION["whitney"]]) {
     $_SESSION["message"] = "Woo hoo!  You got it right!  Here's the next one:"
     $_SESSION["results"]++;
-} elseif($_SESSION["message"] = "Bummer.  Wrong answer.  Better luck with the next question:";
-} elseif($_SESSION["message"] == $_POST["answer"] = $_SESSION["tina"][$_SESSION["counter"]-2]["correctAnswer"]){
+} else {
+    $_SESSION["message"] = "Uh, oh.  Wrong answer.  Better luck with the next question:";
+    }
+
+/*} elseif($_SESSION["message"] == $_POST["answer"] = $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]){
     echo "You got the last question right!";
 } else {
     echo "The last question was incorrect"<br />;    }
     echo "NO MORE QUESTIONS!"; \n;
-    echo " You answered $_SESSION{\"results\"] out of 10 questions correctly! Your Grade: $_SESSION["\results\"] * 10";"
+    echo " You answered $_SESSION{"results"] out of 10 questions correctly! Your Grade: $_SESSION["results"] * 10";"
 }
 
 "<p>Would you like to give it another go?</p>";*/
 
-$total = 10;
-if($_SESSION["message"] == $_POST["answer"] = $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]){
-    $_SESSION["results"]++;
+
+
+
+
+
+if($_POST["answer"][$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]]){
+    echo $_SESSION["results"]++;
     echo "You got the last question right! No more questions!";
     echo "<br>";
 
@@ -86,7 +94,7 @@ if($_SESSION["message"] == $_POST["answer"] = $_SESSION["whitney"][$_SESSION["co
 }
 
 ?>
-         
+
          <p>You answered <?php echo $_SESSION["results"]; ?> out of 10 questions correctly!</p>
          <p>Your score is  <?php echo $_SESSION["results"]*10; ?>%!</p><br>
          <p>Would you like to give it another go?</p><br>
