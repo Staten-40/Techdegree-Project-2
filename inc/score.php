@@ -114,15 +114,17 @@ e
 
 echo "You got " . $_SESSION["results"] . "correct out of 10 questions!";
 echo "<br>";
-e
+
 
 echo "Your score is " . $_SESSION["results"]*10 . "%!"
 
 ?>
          "<p>Would you like to give it another go?</p>"
 
-     </div>
+         <a href="../index.php"><button>Try Again</button></a>
 
+
+              </div>
             </div>
         </div>
     </body>
