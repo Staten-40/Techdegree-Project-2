@@ -45,22 +45,6 @@ session_start();
         line-height: .5;
     }
 
-    input.btn2 {
-        width: 12em;
-        display: inline-block;
-        bottom: 150px;
-        border-radius: 4px;
-        border: 2px solid 	#00FF00;
-        color: black;
-        background-color: 	#00FF00;
-        padding: 15px;
-        margin: 4px;
-        transition: .5s ;
-        text-decoration: none;
-
-
-    }
-
 </style>
    <body>
 
@@ -102,15 +86,15 @@ if($_SESSION["message"] == $_POST["answer"] = $_SESSION["whitney"][$_SESSION["co
 }
 
 ?>
-
-
+         
          <p>You answered <?php echo $_SESSION["results"]; ?> out of 10 questions correctly!</p>
          <p>Your score is  <?php echo $_SESSION["results"]*10; ?>%!</p><br>
          <p>Would you like to give it another go?</p><br>
 
-         <a href="../index.php" name="submit"<button>Try Again"</button>
 
+         <a href="../index.php"><button>Try Again</button></a>
 
+                </div>
               </div>
             </div>
         </div>
