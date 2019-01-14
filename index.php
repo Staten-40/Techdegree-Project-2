@@ -10,6 +10,7 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
 } else {
     $_SESSION["counter"]++;
 }
+
 if($_SESSION["counter"] == 10) {
     header("Location: inc/score.php");
 }
@@ -83,7 +84,7 @@ shuffle($response);
             <div class="container">
                 <div id="quiz-box">
                     <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
-                    <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["leftAdder"]; ?> + <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["rightAdder"]; ?>  ?  </font size></p>
+                    <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["leftAdder"]; ?><strong> + </strong> <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["rightAdder"]; ?> = ?  </font size></p>
 
                     <form action="index.php" method="post">
                         <input type="hidden" name="id" value="0" />

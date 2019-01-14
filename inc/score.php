@@ -28,12 +28,17 @@ session_start();
 
     .header2 {
         margin-left: -2%;
-        margin-top: 1%;
+        margin-top: 3%;
         font-weight: bold;
         left: 10%;
         right: 10%;
         line-height: .10;
 
+    a {
+        padding: 10px;
+        border-radius: 10px;
+        appearance: button;
+        text-align: center;
     }
 
 
@@ -48,7 +53,7 @@ session_start();
  <div class = "header2">
  <h3>Mrs. Shoobobbisock's Class</h3>
 
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 
 <?php
 
@@ -68,10 +73,7 @@ if($_POST["answer"][$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"
          <p>Would you like to give it another go?</p><br>
 
 
-         <a href="../index.php"><button>Try Again</button></butto></a>
-
-
-                </div>
+         <a href ="../index.php"  type="submit" class="btn"><center>Try Again</center></a>
               </div>
             </div>
         </div>
