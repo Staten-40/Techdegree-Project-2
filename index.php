@@ -7,19 +7,12 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
     $_SESSION["whitney"] = $questions;
     $_SESSION["counter"] = 1;
     $_SESSION["results"] = 0;
-} elseif($_SESSION["counter"] >= 10) {
-    $_SESSION["counter"]++;
 } else {
-    unset($_SESSION["whitney"]);
-    echo "Last Question!";
+    $_SESSION["counter"]++;
 }
-
-
 if($_SESSION["counter"] == 10) {
     header("Location: inc/score.php");
 }
-
-
 //session_destroy();
 $testQuest = $_SESSION["whitney"][$_SESSION["counter"] -1];
 $response =
@@ -29,7 +22,6 @@ $response =
         $testQuest["secondIncorrectAnswer"],
     ];
 shuffle($response);
-
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +54,6 @@ shuffle($response);
             width: 80%;
             line-height: .5;
         }
-
     </style>
 </head>
 <body>
@@ -76,36 +67,34 @@ shuffle($response);
 
     <div class="toast">
         <?php
-
         if($_SESSION["counter"] == 1) {
-           echo "<strong>Let's begin!</strong>";
-          } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]+1]["correctAnswer"]) {
-            echo "<strong>Woo hoo!   You got it right!    Here's the next question:</strong>";
+            echo "<strong>Let's begin!</strong>";
+        } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]) {
+            echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
             $_SESSION["results"]++;
-            } else {
+        } else {
             echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
-           }
-            ?>
+        }
+        ?>
+
+        <div class="container">
+            <div id="quiz-box">
+                <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
+                <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["leftAdder"]; ?><strong> + </strong> <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["rightAdder"]; ?> = ?  </font size></p>
+
+                <form action="index.php" method="post">
+                    <input type="hidden" name="id" value="0" />
+                    <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
+                    <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
+                    <input type="submit" class="btn" name="answer" value= <?php echo($response[2]); ?> / >
 
 
-            <div class="container">
-                <div id="quiz-box">
-                    <p class="breadcrumbs"><p>Question <?php echo $_SESSION["counter"]; ?> of 10</p>
-                    <p class="quiz"><p><b><font size="24"> What is <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["leftAdder"]; ?><strong> + </strong> <?php echo $_SESSION["whitney"][$_SESSION["counter"] -1]["rightAdder"]; ?> = ?  </font size></p>
-
-                    <form action="index.php" method="post">
-                        <input type="hidden" name="id" value="0" />
-                        <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
-                        <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
-                        <input type="submit" class="btn" name="answer" value= <?php echo($response[2]); ?> / >
 
 
-
-
-                     </form>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 </body>
 </html>
