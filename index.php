@@ -10,8 +10,11 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
 } else {
     $_SESSION["counter"]++;
 }
-if($_SESSION["counter"] == 10) {
-    header("Location: inc/score.php");
+if($_SESSION["counter"] == 10)  {
+    echo ($_SESSION["counter"]++);
+  //} elseif($_SESSION["whitney"][$_SESSION["counter"] -1] < 10) {
+   // header(Location: ..score.php);
+
 }
 //session_destroy();
 $testQuest = $_SESSION["whitney"][$_SESSION["counter"] -1];
@@ -63,9 +66,10 @@ shuffle($response);
 
     <div class = "header2">
         <h3>Mrs. Shoobobbisock's Class</h3>
+
     </div>
 
-    <div class="toast">
+        <div class="toast">
         <?php
         if($_SESSION["counter"] == 1) {
             echo "<strong>Let's begin!</strong>";
@@ -87,6 +91,9 @@ shuffle($response);
                     <input type="submit" class="btn" name="answer" value= <?php echo($response[0]); ?> / >
                     <input type="submit" class="btn" name="answer" value= <?php echo($response[1]); ?> / >
                     <input type="submit" class="btn" name="answer" value= <?php echo($response[2]); ?> / >
+
+
+
 
 
 
