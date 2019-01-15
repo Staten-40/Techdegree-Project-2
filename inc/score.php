@@ -36,7 +36,8 @@ session_start();
             border-radius: 10px;
             appearance: button;
             text-align: center;
-         }
+            background-color: #9966cc;
+        }
     </style>
 <body>
 
@@ -53,12 +54,13 @@ session_start();
         <?php
         if($_POST["answer"][$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]]){
             echo $_SESSION["results"]++;
-            echo "You got the last question right!";
+            echo '<p><font size="5">You got the last question right!</font size></p>';
             echo "<br>";
-            echo "No more questions";
+            echo '<p>No more questions</p>';
             echo "<br>";
         } else {
-            echo "Your last question was incorrect.  No more questions!";
+            echo '<p><font size="5">Your last answer was incorrect.</font size></p>';
+            echo '<p>No more questions</p>';
             echo "<br>";
         }
         ?>

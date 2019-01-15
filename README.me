@@ -12,7 +12,7 @@ SUMMARY OF ASSIGNMENT
 
 EXPLANATION OF CODE - INDEX.PHP
 ------------------------------------------------------------------------
-**--Lines 1 - 13-**
+**--Lines 1 - 14-**
 - The fun begins by telling the app, before the student even starts using it, where the app should end.
   The app is immediately redirected to the score page that will not display until the student has answered all 10 questions.
 - A $_SESSION["counter"] is then crated to keep track of what question the student is on.
@@ -20,10 +20,10 @@ EXPLANATION OF CODE - INDEX.PHP
 - $_SESSION["whitney"] variable (because just like Whitney is every woman, $_SESSION{"whitney"] is every variable, shout out to Jennifer Nordell) was then created to individualize each item in the $questions multidimensional array so no question in the array would repeat when the student takes the quiz.
 - The counter starts at 1 (Question 1 of 10), incrementing by 1 until it reaches Question 10 of 10.
 
-**--Lines 14 - 16--**
+**--Lines 15 - 16--**
 - For proper functionality in all browsers, a {"REQUEST METHOD"] statement was created to tell the pp if the counter is greater than 10 or does not exist, to reset the counter.
 
-**--Lines 14 - 25--**
+**--Lines 19- 26--**
 - A redirect was created for navigation to the final page that calculates the student's score, giving the student the option of taking the quiz again after answering the final question.
 - To randomize the 3 answers each time the quiz is taken, the $testQuest variable was created to hold the randomized questions while the $response array was built to call and randomize the correct and incorrect answers via $testQuest.
 - -1 is required for this particular $_SESSION["counter"] because this is an array of 10 questions, but the first question in the $questions multidimensional array has a key of zero.
@@ -47,16 +47,18 @@ EXPLANATION OF CODE - INDEX.PHP
 
 EXPLANATION OF CODE - SCORE.PHP
 
-**--Lines 13-46--**
+**--Lines 13-41--**
 - The <style> element is used to style the final page.
 
-**--Lines 50 - 56--**
+**--Lines 46-50--**
 - A header created for the score page and a <div> created for styling the header.
 
-**--Lines 60 - 66--**
+**--Lines 54-66--**
+- The toast for the final question is given
+- The conclusion of the quiz is announced
 - The last score is calculated and the final toast is given.
 
-**Lines 71 - 76--**
+**Lines 67 - 73--**
 - The student's correct responses are displayed against the 10 questions asked.
 - The student's grade is given in percent.
 - The student is offered the opportunity to take the quiz again.

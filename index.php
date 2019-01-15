@@ -4,7 +4,8 @@ session_start();
 include 'inc/questions.php';
 
 if($_SESSION["counter"] == 10) {
-header("Location: inc/score.php");
+    header("Location: inc/score.php");
+}
 
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] > 10))  {
     shuffle($questions);
@@ -71,7 +72,7 @@ shuffle($response);
         <?php
         if($_SESSION["counter"] == 1) {
             echo "<strong>Let's begin!</strong>";
-        } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"])
+        } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]) {
             echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
             $_SESSION["results"]++;
         } else {
