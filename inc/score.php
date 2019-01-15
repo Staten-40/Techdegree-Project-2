@@ -55,8 +55,12 @@ session_start();
             echo $_SESSION["results"]++;
             echo '<p><font size="5">You got the last question right! No more questions!</font size></p>';
             echo "<br>";
+            echo '<p><font size="4">NO MORE QUESTIONS</font size></p>';
+            echo "<br>";
         } else {
-            echo '<p><font size="5">Your last answer was incorrect</font size></p>';
+            echo '<p><font size="5">Your last answer was incorrect.</font size></p>';
+            echo "<br>";
+            echo '<p><font size="4">NO MORE QUESTIONS</font size></p>';
             echo "<br>";
         }
         ?>
