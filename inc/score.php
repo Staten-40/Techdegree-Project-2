@@ -36,7 +36,6 @@ session_start();
             border-radius: 10px;
             appearance: button;
             text-align: center;
-            background-color: #9966cc;
         }
     </style>
 <body>
@@ -52,26 +51,23 @@ session_start();
         <br><br><br><br><br><br><br><br><br><br><br><br>
 
         <?php
-        if($_POST["answer"][$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]]){
+        if($_POST["answer"][$_SESSION]["whitney"][$_SESSION]["counter"]["correctAnswer"]){
             echo $_SESSION["results"]++;
-            echo '<p><font size="5">You got the last question right!</font size></p>';
-            echo "<br>";
-            echo '<p>No more questions</p>';
+            echo '<p><font size="5">You got the last question right! No more questions!</font size></p>';
             echo "<br>";
         } else {
-            echo '<p><font size="5">Your last answer was incorrect.</font size></p>';
-            echo '<p>No more questions</p>';
+            echo '<p><font size="5">Your last answer was incorrect</font size></p>';
             echo "<br>";
         }
         ?>
         <br><br><br><br><br><br><br><br><br>
-        <p>You answered <?php echo $_SESSION["results"]; ?> out of 10 questions correctly.</p>
-        <p>Your score is  <?php echo $_SESSION["results"]*10; ?>%!</p><br>
-        <p>Would you like to give it another go?</p><br>
+        <p><font size="4">You answered <?php echo $_SESSION["results"]; ?> out of 10 questions correctly.</font size></p>
+        <p><font size="4">Your score is  <?php echo $_SESSION["results"]*10; ?>%!</font size></p><br>
+        <p><font size="4">Would you like to give it another go?</font size></p><br>
 
 
-        <a href ="../index.php" type="submit" class="btn"><center>Try Again</center></a>
-
+        <a href ="../index.php"  type="submit" class="btn"><center>Try Again</center></a>
+    </div>
 </div>
 </div>
 </body>
