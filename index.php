@@ -2,7 +2,11 @@
 error_reporting(E_ALL);
 session_start();
 include 'inc/questions.php';
-if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
+
+if($_SESSION["counter"] == 10) {
+    header("Location: inc/score.php");
+}
+if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] > 10))  {
     shuffle($questions);
     $_SESSION["whitney"] = $questions;
     $_SESSION["counter"] = 1;
@@ -10,16 +14,11 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
 } else {
     $_SESSION["counter"]++;
 }
-if($_SESSION["counter"] == 10)  {
-    echo ($_SESSION["counter"]++);
-  //} elseif($_SESSION["whitney"][$_SESSION["counter"] -1] < 10) {
-   // header(Location: ..score.php);
 
-}
 //session_destroy();
 $testQuest = $_SESSION["whitney"][$_SESSION["counter"] -1];
 $response =
-    [
+        [
         $testQuest["correctAnswer"],
         $testQuest["firstIncorrectAnswer"],
         $testQuest["secondIncorrectAnswer"],
