@@ -57,7 +57,7 @@ session_start();
 
 <?php
 
-if($_POST["answer"][$_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]]){
+if($_POST["answer"][$_SESSION]["whitney"][$_SESSION]["counter"]["correctAnswer"]){
     echo $_SESSION["results"]++;
     echo "You got the last question right! No more questions!";
     echo "<br>";

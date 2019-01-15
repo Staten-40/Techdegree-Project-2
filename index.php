@@ -7,13 +7,19 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] >= 10))  {
     $_SESSION["whitney"] = $questions;
     $_SESSION["counter"] = 1;
     $_SESSION["results"] = 0;
-} else {
+} elseif($_SESSION["counter"] >= 10) {
     $_SESSION["counter"]++;
+} else {
+    unset($_SESSION["whitney"]);
+    echo "Last Question!";
 }
+
 
 if($_SESSION["counter"] == 10) {
     header("Location: inc/score.php");
 }
+
+
 //session_destroy();
 $testQuest = $_SESSION["whitney"][$_SESSION["counter"] -1];
 $response =
@@ -73,13 +79,14 @@ shuffle($response);
 
         if($_SESSION["counter"] == 1) {
            echo "<strong>Let's begin!</strong>";
-          } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]) {
-            echo "<strong>Woo hoo!   You got it right!    Here's the next one:</strong>";
+          } elseif($_POST["answer"] == $_SESSION["whitney"][$_SESSION["counter"]+1]["correctAnswer"]) {
+            echo "<strong>Woo hoo!   You got it right!    Here's the next question:</strong>";
             $_SESSION["results"]++;
             } else {
-           echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
-       }
-        ?>
+            echo "<strong>Uh oh.     Wrong answer.    Better luck with this one:</strong>";
+           }
+            ?>
+
 
             <div class="container">
                 <div id="quiz-box">
