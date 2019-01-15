@@ -11,7 +11,7 @@ if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] > 10))  {
     $_SESSION["whitney"] = $questions;
     $_SESSION["counter"] = 1;
     $_SESSION["results"] = 0;
-} else {
+} elseif($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["counter"]++;
 }
 

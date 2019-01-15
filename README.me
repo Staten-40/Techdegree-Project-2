@@ -12,11 +12,16 @@ SUMMARY OF ASSIGNMENT
 
 EXPLANATION OF CODE - INDEX.PHP
 ------------------------------------------------------------------------
-**--Lines 1 - 12--**
-- The fun begins by constructing a $_SESSION["counter"] to keep track of what question the student is on.
+**--Lines 1 - 13-**
+- The fun begins by telling the app, before the student even starts using it, where the app should end.
+  The app is immediately redirected to the score page that will not display until the student has answered all 10 questions.
+- A $_SESSION["counter"] is then crated to keep track of what question the student is on.
 - An If/Else block was created that tells the app if the counter is not set or if the counter is less than 10, to shuffle the $questions array, thereby randomizing said array.
 - $_SESSION["whitney"] variable (because just like Whitney is every woman, $_SESSION{"whitney"] is every variable, shout out to Jennifer Nordell) was then created to individualize each item in the $questions multidimensional array so no question in the array would repeat when the student takes the quiz.
 - The counter starts at 1 (Question 1 of 10), incrementing by 1 until it reaches Question 10 of 10.
+
+**--Lines 14 - 16--**
+- For proper functionality in all browsers, a {"REQUEST METHOD"] statement was created to tell the pp if the counter is greater than 10 or does not exist, to reset the counter.
 
 **--Lines 14 - 25--**
 - A redirect was created for navigation to the final page that calculates the student's score, giving the student the option of taking the quiz again after answering the final question.
