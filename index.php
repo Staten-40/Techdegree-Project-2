@@ -4,6 +4,9 @@ session_start();
 include 'inc/questions.php';
 
 if($_SESSION["counter"] == 10) {
+        $_SESSION["lastAnswer"] = $_POST["answer"];
+        header("Location: inc/score.php");
+    }
     header("Location: inc/score.php");
 }
 
