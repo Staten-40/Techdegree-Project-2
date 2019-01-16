@@ -52,8 +52,7 @@ session_start();
 
         <?php
         if($_SESSION["lastAnswer"] == $_SESSION["whitney"][$_SESSION["counter"]-2]["correctAnswer"]) {
-            echo $_SESSION["results"]++;
-            echo '<p><font size="5">You got the last question right! No more questions!</font size></p>';
+            echo '<p><font size="5">You got the last question right!</font size></p>';
             echo "<br>";
             echo '<p><font size="4">NO MORE QUESTIONS</font size></p>';
             echo "<br>";
