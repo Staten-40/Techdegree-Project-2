@@ -7,8 +7,7 @@ if($_SESSION["counter"] == 10) {
         $_SESSION["lastAnswer"] = $_POST["answer"];
         header("Location: inc/score.php");
     }
-    header("Location: inc/score.php");
-}
+
 
 if(!isset ($_SESSION["counter"]) || ($_SESSION["counter"] > 10))  {
     shuffle($questions);
